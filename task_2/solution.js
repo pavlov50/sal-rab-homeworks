@@ -17,10 +17,12 @@ function calcShipping(sum, min, shipping) {
     // то shippingSum присвоить значение shippingPrice
 
     let shippingSum;
-    if (productsSum == 0) {shippingSum = 0};
-    if (productsSum >= freeShippingMinSum) {shippingSum = 0};
-    if ((productsSum > 0) && (productsSum < freeShippingMinSum)) {shippingSum = shippingPrice};
-
+    
+    if (productsSum == 0 || productsSum >= freeShippingMinSum) {
+        shippingSum = 0;
+        }
+        else {shippingSum = shippingPrice}
+    
 
 
 
@@ -65,6 +67,12 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
     // присвойте totalSum значение productsSum
     // уменьшите totalSum на discountSum
 
+    let totalSum;
+    totalSum = productsSum;
+    totalSum = totalSum - discountSum;
+    totalSum = totalSum + shippingSum;
+    
+    
     let shippingSum = calcShipping(totalSum, shippingFreeMinSum, shippingPrice); // не изменяйте эту строку!!!
 
     // прибавьте к totalSum значение shippingSum
@@ -74,13 +82,7 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
     // если shippingSum равно нулю, то freeShipping должна быть равна true, иначе freeShipping должна быть равна false
 
 
-
-    let totalSum;
-    totalSum = productsSum;
-    totalSum = totalSum - discountSum;
-    totalSum = totalSum + shippingSum;
-    let freeShipping;
-    let result = (shippingSum == 0) ? freeShipping = true : freeShipping = false;
+    let freeShipping = shippingSum == 0;
 
 
 
