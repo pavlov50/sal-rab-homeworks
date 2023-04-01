@@ -16,10 +16,10 @@ function calcShipping(sum, min, shipping) {
     // если productsSum больше 0 и меньше freeShippingMinSum,
     // то shippingSum присвоить значение shippingPrice
 
-let shippingSum;
-if (productsSum = 0) {shippingSum = 0};
-if (productsSum >= freeShippingMinSum) {shippingSum = 0};
-if ((productsSum > 0) && (productsSum < freeShippingMinSum)) {shippingSum = shippingPrice};
+    let shippingSum;
+    if (productsSum == 0) {shippingSum = 0};
+    if (productsSum >= freeShippingMinSum) {shippingSum = 0};
+    if ((productsSum > 0) && (productsSum < freeShippingMinSum)) {shippingSum = shippingPrice};
 
 
 
@@ -44,8 +44,8 @@ function calcDiscount(sum, min, discount) {
     // то присвойте discountSum значение discountPart процентов от productsSum,
     // иначе присвойте discountSum значение 0
 
-let discountSum;
-if (productsSum >= discountMinSum) {discountSum = discountPart * productsSum / 100} else {discountSum = 0};
+    let discountSum;
+    if (productsSum >= discountMinSum) {discountSum = discountPart * productsSum / 100} else {discountSum = 0};
 
 
 
@@ -75,12 +75,12 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
 
 
 
-let totalSum;
-totalSum = productsSum;
-totalSum = totalSum - discountSum;
-totalSum = totalSum + shippingSum;
-let freeShipping;
-(shippingSum == 0) ? freeShipping = true : freeShipping = false;
+    let totalSum;
+    totalSum = productsSum;
+    totalSum = totalSum - discountSum;
+    totalSum = totalSum + shippingSum;
+    let freeShipping;
+    let result = (shippingSum == 0) ? freeShipping = true : freeShipping = false;
 
 
 
