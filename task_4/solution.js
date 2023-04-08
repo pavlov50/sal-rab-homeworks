@@ -6,7 +6,7 @@ function parseProducts(json) {
     // Преобразуйте строку json, переданную как аргумент функции,
     // в объект с помощью функции JSON.parse(json)
 
-let data = json.pars(json);
+let data = JSON.parses(json);
 
     // и запишите в переменную data
 
